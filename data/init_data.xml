@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Add admin user to the mail server group -->
+        <record id="base.user_admin" model="res.users">
+            <field name="groups_id" eval="[(4, ref('website_mail_server.group_website_mail_server'))]"/>
+        </record>
+        
+        <!-- Add all website managers to the group -->
+        <record id="group_website_mail_managers" model="res.groups">
+            <field name="name">Website Mail Managers</field>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="implied_ids" eval="[(4, ref('website_mail_server.group_website_mail_server'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_website_form_mail_server" model="ir.ui.view">
+        <field name="name">website.form.mail.server</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='domain']" position="after">
+                <group name="email" string="Email Settings">
+                    <field name="mail_server_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
